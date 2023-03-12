@@ -26,7 +26,7 @@ const Navbar = () => {
           Dare Goodness
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden sm:flex flex-row gap-10 items-center'>
           {navLinks.map(nav => (
             <li
               key={nav.id}
@@ -38,6 +38,9 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <button className='text-[14px] bg-tertiary p-1 px-3 rounded-md hover:scale-125 transition duration-700 ease-in-out '>
+            Resume
+          </button>
         </ul>
       </div>
     </nav>
