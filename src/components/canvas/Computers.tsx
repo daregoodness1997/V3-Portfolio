@@ -1,19 +1,13 @@
-//@ts-ignore
 import React, { Suspense, useEffect, useState, useRef } from 'react';
-import { Canvas, extend, ReactThreeFiber, useFrame } from '@react-three/fiber';
+import { Canvas, extend } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 extend({ OrbitControls, Preload, useGLTF });
 import * as THREE from 'three';
-import type { Mesh } from 'three';
 
-import CanvasLoader from '../Loader';
-
-const Computers = (props: JSX.IntrinsicElements['mesh']) => {
-  const mesh = useRef<Mesh>(null!);
-
-  const computer = useGLTF('./desktop_pc/scene.gltf');
+const Computers = () => {
+  const computer = useGLTF('./desktop_pc/scene.gltf', true);
   return (
-    <mesh {...props} ref={mesh} scale={0.9}>
+    <mesh scale={0.9}>
       <hemisphereLight
         intensity={0.15}
         groundColor='black'
@@ -27,21 +21,16 @@ const Computers = (props: JSX.IntrinsicElements['mesh']) => {
 };
 
 const ComputersCanvas = () => {
-  const control = useRef(null!);
-  const canvas = useRef(null!);
-
   return (
     <Canvas
-      ref={canvas}
       frameloop='demand'
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={null}>
         <OrbitControls
-          ref={control}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
