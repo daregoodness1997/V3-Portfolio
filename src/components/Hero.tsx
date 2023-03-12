@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className='w-full xs:w-1/2 '>
+        <div className='w-full xs:w-1/2 h-full '>
           <ComputersCanvas />
         </div>
       </div>
