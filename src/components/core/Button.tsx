@@ -6,9 +6,10 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ onClick, label, size }) => {
+  const checkSize = () => {};
   return (
     <button
-      className='text-[14px] bg-tertiary p-1 px-3 rounded-md hover:scale-125 transition duration-700 ease-in-out '
+      className={`text-[14px] bg-tertiary p-1 px-3 rounded-md hover:scale-125 transition duration-700 ease-in-out `}
       onClick={onClick}
     >
       {label}

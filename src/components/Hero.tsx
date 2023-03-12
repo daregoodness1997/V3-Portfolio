@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { Button } from './core';
+import { ComputersCanvas } from './canvas';
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
           <div>
             <h1 className='text-[32px] lg:text-6xl font-bold mb-4 '>
               I design <span className='text-[#915eff]'>Websites</span> and also
-              develop them
+              develop them.
             </h1>
             <p className={` my-2 mb-4 text-white tex-[20px]`}>
               I am always trying to find the perfect blend of creativity and
@@ -27,7 +28,9 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className='w-full bg-red-500 h-full xs:w-1/2 '></div>
+        <div className='w-full xs:w-1/2 '>
+          <ComputersCanvas />
+        </div>
       </div>
     </section>
   );
