@@ -1,16 +1,34 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { styles } from '../styles';
+import { Button } from './core';
 
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
-      <h1 className='text-3xl font-bold underline'>
-        Hello, I am a Product Designer and Software Developer
-      </h1>
-      <p>
-        I craft responive websites, with the perfect blend of creativity and
-        technology
-      </p>
-      <button>Contact Me</button>
+      <div
+        className={`${styles.mpaddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-start gap-5 xs:flex-row `}
+      >
+        <div className='w-full xs:w-1/2 flex'>
+          <div className='flex flex-col sm:mx-5  mx-2 justify-start items-center sm:justify-start'>
+            <div className='w-5 h-5 rounded-full bg-[#915eff]' />
+            <div className='w-1 sm:h-80 h-40 violet-gradient' />
+          </div>
+          <div>
+            <h1 className='text-[32px] lg:text-6xl font-bold mb-4 '>
+              I design <span className='text-[#915eff]'>Websites</span> and also
+              develop them
+            </h1>
+            <p className={` my-2 mb-4 text-white tex-[20px]`}>
+              I am always trying to find the perfect blend of creativity and
+              technology
+            </p>
+            <Button label={'Contact Me'} />
+          </div>
+        </div>
+
+        <div className='w-full bg-red-500 h-full xs:w-1/2 '></div>
+      </div>
     </section>
   );
 };

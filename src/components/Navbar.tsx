@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { navLinks } from '../constants';
 import { styles } from '../styles';
+import { Button } from './core';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-6 fixed top-0 z-20 bg-primary backdrop-blur-md`}
+      className={`${styles.paddingX} w-full flex items-center py-6 fixed top-0 z-20 bg-[transparent] backdrop-blur-md`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
@@ -38,9 +39,7 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-          <button className='text-[14px] bg-tertiary p-1 px-3 rounded-md hover:scale-125 transition duration-700 ease-in-out '>
-            Resume
-          </button>
+          <Button label={'Resume'} />
         </ul>
       </div>
     </nav>
