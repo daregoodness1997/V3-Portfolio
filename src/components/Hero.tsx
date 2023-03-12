@@ -2,15 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { Button } from './core';
-import { ComputersCanvas } from './canvas';
+import { BoxCanvas, ComputersCanvas } from './canvas';
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className={`relative w-full h-[80vh] mx-auto`}>
       <div
         className={`${styles.mpaddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-start gap-5 xs:flex-row `}
       >
-        <div className='w-full xs:w-1/2 flex'>
+        <div className='w-full xs:w-1/2 flex '>
           <div className='flex flex-col sm:mx-5  mx-2 justify-start items-center sm:justify-start'>
             <div className='w-5 h-5 rounded-full bg-[#915eff]' />
             <div className='w-1 sm:h-80 h-40 violet-gradient' />
@@ -28,8 +28,9 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className='w-full xs:w-1/2 h-full '>
+        <div className='w-full xs:w-1/2 h-screen '>
           <ComputersCanvas />
+          {/* <BoxCanvas /> */}
         </div>
       </div>
     </section>

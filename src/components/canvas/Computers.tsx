@@ -1,15 +1,19 @@
 //@ts-ignore
-import React, { Suspense, useEffect, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { Suspense, useEffect, useState, useRef } from 'react';
+import { Canvas, extend, ReactThreeFiber, useFrame } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
+extend({ OrbitControls, Preload, useGLTF });
+import * as THREE from 'three';
+import type { Mesh } from 'three';
 
 import CanvasLoader from '../Loader';
 
-const Computers = () => {
-  const computer = useGLTF('./desktop_pc/scene.gltf');
+const Computers = (props: JSX.IntrinsicElements['mesh']) => {
+  const mesh = useRef<Mesh>(null!);
 
+  const computer = useGLTF('./desktop_pc/scene.gltf');
   return (
-    <mesh>
+    <mesh {...props} ref={mesh} scale={0.9}>
       <hemisphereLight
         intensity={0.15}
         groundColor='black'
@@ -23,8 +27,12 @@ const Computers = () => {
 };
 
 const ComputersCanvas = () => {
+  const control = useRef(null!);
+  const canvas = useRef(null!);
+
   return (
     <Canvas
+      ref={canvas}
       frameloop='demand'
       shadows
       dpr={[1, 2]}
@@ -33,6 +41,7 @@ const ComputersCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
+          ref={control}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
