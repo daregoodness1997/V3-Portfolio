@@ -5,11 +5,19 @@ interface Props {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const Button: React.FC<Props> = ({ onClick, label, size }) => {
-  const checkSize = () => {};
+const Button: React.FC<Props> = ({ onClick, label, size = 'sm' }) => {
+  const checkSize = () => {
+    if (size === 'md') {
+      return '20px';
+    }
+    if (size === 'lg') {
+      return '28px';
+    }
+    return '14px';
+  };
   return (
     <button
-      className={`text-[14px] bg-tertiary p-1 px-3 rounded-md hover:scale-125 transition duration-700 ease-in-out `}
+      className={`text-[${checkSize()}] bg-tertiary p-1 px-3 rounded-md hover:scale-125 transition duration-700 ease-in-out `}
       onClick={onClick}
     >
       {label}

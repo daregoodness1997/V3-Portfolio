@@ -24,7 +24,7 @@ const Hero = () => {
               I am always trying to find the perfect blend of creativity and
               technology
             </p>
-            <Button label={'Contact Me'} />
+            <Button label={'Contact Me'} size='md' />
           </div>
         </div>
 

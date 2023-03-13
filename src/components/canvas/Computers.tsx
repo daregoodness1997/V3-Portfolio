@@ -3,6 +3,7 @@ import { Canvas, extend } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 extend({ OrbitControls, Preload, useGLTF });
 import * as THREE from 'three';
+import Loader from '../Loader';
 
 const Computers = () => {
   const computer = useGLTF('./desktop_pc/scene.gltf', true);
@@ -13,6 +14,13 @@ const Computers = () => {
         groundColor='black'
         scale={0.75}
         rotation={[-0.01, -0.2, -0.1]}
+      />
+      <spotLight
+        position={[-8, 10, 4]}
+        angle={0.12}
+        penumbra={1}
+        intensity={1}
+        castShadow
       />
       <pointLight intensity={1} />
       <primitive object={computer.scene} />
