@@ -6,7 +6,7 @@ import { BoxCanvas, ComputersCanvas } from './canvas';
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-[80vh] mx-auto`}>
+    <section className={`relative w-full h-screen sm:h-[70vh] mx-auto`}>
       <div
         className={`${styles.mpaddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-start gap-5 xs:flex-row `}
       >
@@ -30,7 +30,6 @@ const Hero = () => {
 
         <div className='w-full xs:w-1/2 h-screen '>
           <ComputersCanvas />
-          {/* <BoxCanvas /> */}
         </div>
       </div>
     </section>
