@@ -4,7 +4,7 @@ import { styles } from '../styles';
 const Contact = () => {
   return (
     <>
-      <section className={`relative w-full h-screen sm:h-[70vh] mx-auto`}>
+      <section className={`relative w-full h-auto  mx-auto`}>
         <article className={`${styles.mpaddingX}  max-w-7xl mx-auto `}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac

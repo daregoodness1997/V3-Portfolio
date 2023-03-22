@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { styles } from '../styles';
 
 const Tech = () => {
   return (
-    <div>Tech</div>
-  )
-}
+    <section className={`relative w-full h-screen sm:h-[70vh] mx-auto`}>
+      <div className={`${styles.mpaddingX}  max-w-7xl mx-auto `}></div>
+    </section>
+  );
+};
 
-export default Tech
+export default Tech;
