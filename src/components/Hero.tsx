@@ -31,7 +31,7 @@ const Hero = () => {
         <div className='w-full xs:w-1/2 sm:h-screen h-auto '>
           <ComputersCanvas />
         </div>
-        <div className='absolute xs:bottom-[-120px] bottom-[-200px] flex justify-center items-center w-full z-10'>
+        <div className='absolute xs:bottom-[-90px] bottom-[-120px] flex justify-center items-center w-full z-10'>
           <a href='#about'>
             <div
               className='w-[32px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2
