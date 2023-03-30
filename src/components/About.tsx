@@ -5,17 +5,21 @@ import { styles } from '../styles';
 import { services } from '../constants';
 import ServiceCard from './core/ServiceCard';
 import { SectionWrapper } from './hoc';
+import { fadeIn, textVariant } from '../utils/motion';
 
 const About = () => {
   return (
-    <div className='sm:mt-24 mt-48'>
-      <div className={`${styles.mpaddingX} max-w-7xl mx-auto`}>
-        <motion.div>
+    <>
+      <div className='sm:mt-24 mt-48'>
+        <motion.div variants={textVariant()}>
           <p className={styles.heroSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>My General Synopsis.</h2>
         </motion.div>
 
-        <motion.p className='mt-4 text-secondary leading-[30px]'>
+        <motion.p
+          variants={fadeIn('', '', 0.1, 1)}
+          className='mt-4 text-secondary leading-[30px]'
+        >
           I create products using various skillsets that I have developed
           through my education as a mechanical engineer and due to to work
           experience and technical skills as a product designer and software
@@ -41,7 +45,7 @@ const About = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import { StringKeyframeTrack } from 'three';
 
-export const textVariant = (delay: number) => {
+export const textVariant = (delay?: number) => {
   return {
     hidden: {
       y: -50,
@@ -18,7 +18,7 @@ export const textVariant = (delay: number) => {
   };
 };
 
-type directionType = 'left' | 'right' | 'up' | 'down';
+type directionType = 'left' | 'right' | 'up' | 'down' | '';
 
 export const fadeIn = (
   direction: directionType,
@@ -89,7 +89,10 @@ export const slideIn = (
   };
 };
 
-export const staggerContainer = (staggerChildren: any, delayChildren: any) => {
+export const staggerContainer = (
+  staggerChildren?: any,
+  delayChildren?: any
+) => {
   return {
     hidden: {},
     show: {
