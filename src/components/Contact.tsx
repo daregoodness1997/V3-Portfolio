@@ -1,83 +1,59 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { styles } from '../styles';
+import Input from './core/Input';
+import { SectionWrapper } from './hoc';
+import { Button } from './core';
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
+        form.current,
+        'YOUR_PUBLIC_KEY'
+      )
+      .then(
+        result => {
+          console.log(result.text);
+        },
+        error => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <>
-      <section className={`relative w-full h-auto  mx-auto`}>
-        <article className={`${styles.mpaddingX}  max-w-7xl mx-auto `}>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
-            rhoncus quam.
-          </p>
-          <p>
-            Fringilla quam urna. Cras turpis elit, euismod eget ligula quis,
-            imperdiet sagittis justo. In viverra fermentum ex ac vestibulum.
-            Aliquam eleifend nunc a luctus porta. Mauris laoreet augue ut felis
-            blandit, at iaculis odio ultrices. Nulla facilisi. Vestibulum cursus
-            ipsum tellus, eu tincidunt neque tincidunt a.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            In eget sodales arcu, consectetur efficitur metus. Duis efficitur
-            tincidunt odio, sit amet laoreet massa fringilla eu.
-          </p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-        </article>
-      </section>
+      <div className='sm:mt-24 mt-16 flex flex-wrap gap-10 justify-between'>
+        <div className='w-1/2'>
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className='flex flex-col gap-4 w-full '
+          >
+            <Input
+              placeholder='Enter your name'
+              name='user_name'
+              label='Full Name'
+            />
+            <Input
+              placeholder='Enter your email addresss'
+              type='email'
+              name='user_email'
+              label='Email Address'
+            />
+            <Button label='Submit' type='submit' isFullWidth={true} />
+          </form>
+        </div>
+        <div></div>
+      </div>
     </>
   );
 };
 
-export default Contact;
+export default SectionWrapper(Contact, 'contact');
