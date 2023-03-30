@@ -6,7 +6,7 @@ import { BoxCanvas, ComputersCanvas } from './canvas';
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen sm:h-[80vh] mx-auto`}>
+    <section className={`relative w-full h-screen sm:h-screen mx-auto `}>
       <div
         className={`${styles.mpaddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-start gap-5 xs:flex-row sm:p-12`}
       >
@@ -31,7 +31,7 @@ const Hero = () => {
         <div className='w-full xs:w-1/2 sm:h-full h-[60vh]  '>
           <ComputersCanvas />
         </div>
-        <div className='absolute xs:bottom-[-90px] bottom-[-60px] left-0 flex justify-center items-center w-full z-10 '>
+        <div className='absolute xs:bottom-[20px] bottom-[-60px] left-0 flex justify-center items-center w-full z-10 '>
           <a href='#about'>
             <div
               className='w-[32px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2
