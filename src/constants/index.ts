@@ -17,7 +17,26 @@ const navLinks = [
   },
 ];
 
-export { navLinks };
+const services = [
+  {
+    title: 'Frontend Developer',
+    icon: null,
+  },
+  {
+    title: 'Product Developer',
+    icon: null,
+  },
+  {
+    title: 'Backend Developer',
+    icon: null,
+  },
+  {
+    title: 'React Native Developer',
+    icon: null,
+  },
+];
+
+export { navLinks, services };
 
 // https://www.phyllosophy.me/seattleworks
 // https://www.rachelyhe.com/
