@@ -13,28 +13,17 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <Tilt className='xs:w-[320px] w-full cursor-pointer' scale={1.2}>
+    <Tilt className='xs:w-[320px]  w-full cursor-pointer' scale={1.2}>
       <motion.div
         variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
         className='w-full p-[1px] rounded-[20px] '
       >
-        <div
-          //   options={{ max: 45, scale: 1, speed: 50 }}
-          className='bg-tertiary rounded-[20px] p-4 min-h-[280px] flex flex-col justify-evenly items-center'
-        >
+        <div className='bg-tertiary rounded-[20px] p-4 min-h-[280px] h-[420px] flex flex-col justify-evenly items-center'>
           <img
             src={image}
             alt={name}
             className='w-full h-48 object-cover rounded-md'
           />
-
-          {/* <div className='relative w-full h-[230px]'>
-            <img
-              src={image}
-              alt='project_image'
-              className='w-full h-full object-cover rounded-2xl'
-            />
-          </div> */}
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
             <div
@@ -51,13 +40,15 @@ const ProjectCard = ({
 
           <div className='mt-5'>
             <h3 className='text-white font-bold text-[24px] ] mt-2'>{name}</h3>
-            <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+            <p className='mt-2 text-secondary text-[14px] h-[105px] text-ellipsis overflow-hidden'>
+              {description}
+            </p>
           </div>
 
           <div className='flex gap-2 mt-2'>
             {tags.map((tag, idx) => (
               <div className={`text-[14px] ${tag?.color}`} key={idx}>
-                {tag.name}
+                #{tag.name}
               </div>
             ))}
           </div>
