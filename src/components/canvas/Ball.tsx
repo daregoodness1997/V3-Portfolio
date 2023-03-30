@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import {
+  Decal,
+  OrbitControls,
+  Float,
+  Preload,
+  useTexture,
+} from '@react-three/drei';
 
 const Ball = () => {
-  return (
-    <div>Ball</div>
-  )
+  return <div>Ball</div>;
+};
+
+interface BallCanvasProps {
+  icon: React.ComponentType;
 }
 
-export default Ball
+const BallCanvas: React.FC<BallCanvasProps> = ({ icon }) => {
+  return <>Ball Canvas</>;
+};
+
+export default BallCanvas;

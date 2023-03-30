@@ -92,7 +92,77 @@ const experiences = [
   },
 ];
 
-export { navLinks, services, experiences };
+const technologies = [
+  {
+    name: 'HTML 5',
+    icon: null,
+  },
+  {
+    name: 'CSS 3',
+    icon: null,
+  },
+  {
+    name: 'JavaScript',
+    icon: null,
+  },
+  {
+    name: 'Python',
+    icon: null,
+  },
+  {
+    name: 'TypeScript',
+    icon: null,
+  },
+  {
+    name: 'React JS',
+    icon: null,
+  },
+  {
+    name: 'Redux Toolkit',
+    icon: null,
+  },
+  {
+    name: 'SWR',
+    icon: null,
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: null,
+  },
+  {
+    name: 'Chakra UI',
+    icon: null,
+  },
+  {
+    name: 'Node JS',
+    icon: null,
+  },
+  {
+    name: 'MongoDB',
+    icon: null,
+  },
+  {
+    name: 'Three JS',
+    icon: null,
+  },
+  {
+    name: 'git',
+    icon: null,
+  },
+  {
+    name: 'figma',
+    icon: null,
+  },
+  {
+    name: 'framer',
+    icon: null,
+  },
+  {
+    name: 'Adobe XD',
+    icon: null,
+  },
+];
+export { navLinks, services, experiences, technologies };
 
 // https://www.phyllosophy.me/seattleworks
 // https://www.rachelyhe.com/
