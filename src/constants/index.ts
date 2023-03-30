@@ -1,15 +1,38 @@
-const navLinks = [
+import {
+  mobile,
+  backend,
+  creator,
+  web,
+  javascript,
+  typescript,
+  html,
+  css,
+  reactjs,
+  redux,
+  tailwind,
+  nodejs,
+  mongodb,
+  git,
+  figma,
+  docker,
+  meta,
+  starbucks,
+  tesla,
+  shopify,
+  carrent,
+  jobit,
+  tripguide,
+  threejs,
+} from '../assets';
+
+export const navLinks = [
   {
     id: 'about',
     title: 'About',
   },
   {
-    id: 'work',
-    title: 'Work',
-  },
-  {
-    id: 'not-work',
-    title: 'Not Work',
+    id: 'projects',
+    title: 'Projects',
   },
   {
     id: 'contact',
@@ -19,42 +42,96 @@ const navLinks = [
 
 const services = [
   {
-    title: 'Frontend Developer',
-    icon: null,
-  },
-  {
-    title: 'Product Developer',
-    icon: null,
-  },
-  {
-    title: 'Backend Developer',
-    icon: null,
+    title: 'Web Developer',
+    icon: web,
   },
   {
     title: 'React Native Developer',
-    icon: null,
+    icon: mobile,
+  },
+  {
+    title: 'Backend Developer',
+    icon: backend,
+  },
+  {
+    title: 'Content Creator',
+    icon: creator,
+  },
+];
+
+const technologies = [
+  {
+    name: 'HTML 5',
+    icon: html,
+  },
+  {
+    name: 'CSS 3',
+    icon: css,
+  },
+  {
+    name: 'JavaScript',
+    icon: javascript,
+  },
+  {
+    name: 'TypeScript',
+    icon: typescript,
+  },
+  {
+    name: 'React JS',
+    icon: reactjs,
+  },
+  {
+    name: 'Redux Toolkit',
+    icon: redux,
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: tailwind,
+  },
+  {
+    name: 'Node JS',
+    icon: nodejs,
+  },
+  {
+    name: 'MongoDB',
+    icon: mongodb,
+  },
+  {
+    name: 'Three JS',
+    icon: threejs,
+  },
+  {
+    name: 'git',
+    icon: git,
+  },
+  {
+    name: 'figma',
+    icon: figma,
+  },
+  {
+    name: 'docker',
+    icon: docker,
   },
 ];
 
 const experiences = [
   {
-    title: 'Software Engineer & Founding Product Designer',
-    company_name: 'Octosoft Technologies',
-    icon: null,
+    title: 'React.js Developer',
+    company_name: 'Starbucks',
+    icon: starbucks,
     iconBg: '#383E56',
-    date: 'July 2020 - Present',
+    date: 'March 2020 - April 2021',
     points: [
-      'Implemented user management, account creation, and authentication feature.',
-      'Simplified tenant onboarding with a 3-step process, auto-setup upon completion to increase user acquisition',
-      'Implemented the ‘Expense app’ web-admin dashboard in React and styled-component.',
-      'I led the design in creating and executing end-to-end design for a flagship Enterprise solution, through collaboration with multiple teams and effective management.',
-      'I managed mobile app design for an all-in-one healthcare platform, aligned changes to meet requirements, and created mockups for app store deployment.',
+      'Developing and maintaining web applications using React.js and other related technologies.',
+      'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
+      'Implementing responsive design and ensuring cross-browser compatibility.',
+      'Participating in code reviews and providing constructive feedback to other developers.',
     ],
   },
   {
-    title: 'Product Designer',
-    company_name: 'Octosoft Technologies',
-    icon: null,
+    title: 'React Native Developer',
+    company_name: 'Tesla',
+    icon: tesla,
     iconBg: '#E6DEDD',
     date: 'Jan 2021 - Feb 2022',
     points: [
@@ -65,9 +142,9 @@ const experiences = [
     ],
   },
   {
-    title: 'Frontend Developer',
-    company_name: 'Healthstack Technologies',
-    icon: null,
+    title: 'Web Developer',
+    company_name: 'Shopify',
+    icon: shopify,
     iconBg: '#383E56',
     date: 'Jan 2022 - Jan 2023',
     points: [
@@ -78,9 +155,9 @@ const experiences = [
     ],
   },
   {
-    title: 'Software Developer and Principal Product Designer',
-    company_name: 'Fireswitch Technologies',
-    icon: null,
+    title: 'Full stack Developer',
+    company_name: 'Meta',
+    icon: meta,
     iconBg: '#E6DEDD',
     date: 'Jan 2023 - Present',
     points: [
@@ -92,77 +169,181 @@ const experiences = [
   },
 ];
 
-const technologies = [
+const testimonials = [
   {
-    name: 'HTML 5',
-    icon: null,
+    testimonial:
+      'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
+    name: 'Sara Lee',
+    designation: 'CFO',
+    company: 'Acme Co',
+    image: 'https://randomuser.me/api/portraits/women/4.jpg',
   },
   {
-    name: 'CSS 3',
-    icon: null,
+    testimonial:
+      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+    name: 'Chris Brown',
+    designation: 'COO',
+    company: 'DEF Corp',
+    image: 'https://randomuser.me/api/portraits/men/5.jpg',
   },
   {
-    name: 'JavaScript',
-    icon: null,
-  },
-  {
-    name: 'Python',
-    icon: null,
-  },
-  {
-    name: 'TypeScript',
-    icon: null,
-  },
-  {
-    name: 'React JS',
-    icon: null,
-  },
-  {
-    name: 'Redux Toolkit',
-    icon: null,
-  },
-  {
-    name: 'SWR',
-    icon: null,
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: null,
-  },
-  {
-    name: 'Chakra UI',
-    icon: null,
-  },
-  {
-    name: 'Node JS',
-    icon: null,
-  },
-  {
-    name: 'MongoDB',
-    icon: null,
-  },
-  {
-    name: 'Three JS',
-    icon: null,
-  },
-  {
-    name: 'git',
-    icon: null,
-  },
-  {
-    name: 'figma',
-    icon: null,
-  },
-  {
-    name: 'framer',
-    icon: null,
-  },
-  {
-    name: 'Adobe XD',
-    icon: null,
+    testimonial:
+      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+    name: 'Lisa Wang',
+    designation: 'CTO',
+    company: '456 Enterprises',
+    image: 'https://randomuser.me/api/portraits/women/6.jpg',
   },
 ];
-export { navLinks, services, experiences, technologies };
 
-// https://www.phyllosophy.me/seattleworks
-// https://www.rachelyhe.com/
+const projects = [
+  {
+    name: 'Car Rent',
+    description:
+      'Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.',
+    tags: [
+      {
+        name: 'react',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'mongodb',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'tailwind',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: carrent,
+    source_code_link: 'https://github.com/',
+  },
+  {
+    name: 'Job IT',
+    description:
+      'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
+    tags: [
+      {
+        name: 'react',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'restapi',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'scss',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: jobit,
+    source_code_link: 'https://github.com/',
+  },
+  {
+    name: 'Trip Guide',
+    description:
+      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+    tags: [
+      {
+        name: 'nextjs',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'supabase',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'css',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: tripguide,
+    source_code_link: 'https://github.com/',
+  },
+  {
+    name: 'Trip Guide',
+    description:
+      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+    tags: [
+      {
+        name: 'nextjs',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'supabase',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'css',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: tripguide,
+    source_code_link: 'https://github.com/',
+  },
+  {
+    name: 'Trip Guide',
+    description:
+      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+    tags: [
+      {
+        name: 'nextjs',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'supabase',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'css',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: tripguide,
+    source_code_link: 'https://github.com/',
+  },
+  {
+    name: 'Trip Guide',
+    description:
+      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+    tags: [
+      {
+        name: 'nextjs',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'supabase',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'css',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: tripguide,
+    source_code_link: 'https://github.com/',
+  },
+  {
+    name: 'Trip Guide',
+    description:
+      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+    tags: [
+      {
+        name: 'nextjs',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'supabase',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'css',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: tripguide,
+    source_code_link: 'https://github.com/',
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects };

@@ -8,7 +8,7 @@ import {
   Navbar,
   StarsCanvas,
   Tech,
-  Works,
+  Projects,
 } from './components';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
@@ -30,7 +30,7 @@ const App = () => {
           </div>
           <About />
           <Tech />
-          <Works />
+          <Projects />
           <Experience />
           <Feedbacks />
           <div className='relative z-0'>
