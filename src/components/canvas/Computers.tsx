@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 extend({ OrbitControls, Preload, useGLTF });
 import Loader from '../Loader';
 
-interface Props {
+export interface Props {
   isMobile: boolean;
 }
 

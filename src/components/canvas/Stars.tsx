@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Preload } from '@react-three/drei';
 
 const Stars = () => {
-  return (
-    <div>Stars</div>
-  )
-}
+  return <mesh>Stars</mesh>;
+};
 
-export default Stars
+const StarsCanvas = () => {
+  return (
+    <Canvas>
+      <Stars />
+    </Canvas>
+  );
+};
+
+export default StarsCanvas;

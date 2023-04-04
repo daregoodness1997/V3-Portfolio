@@ -69,7 +69,7 @@ const Contact = () => {
         </motion.div>
         <motion.div
           variants={slideIn('right', 'tween', 0.2, 1)}
-          className='xl:h-auto md:h-[550px] h-[350px]'
+          className='xl:h-auto md:h-[550px] h-[350px] sm:w-1/2 w-full'
         >
           <EarthCanvas />
         </motion.div>
