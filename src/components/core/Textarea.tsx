@@ -1,15 +1,15 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { TextareaHTMLAttributes } from 'react';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface Textarea extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   error?: Record<any, string>;
   label?: string;
 }
 
-const Input: React.FC<InputProps> = ({ error, label, ...props }) => {
+const Textarea: React.FC<Textarea> = ({ error, label, ...props }) => {
   return (
     <div className='form-control'>
       <label htmlFor={props.name}>{label}</label>
-      <input
+      <textarea
         className='px-6 py-4 bg-tertiary w-full rounded-md mt-2 placeholder:text-secondary outline-none'
         {...props}
       />
@@ -18,4 +18,4 @@ const Input: React.FC<InputProps> = ({ error, label, ...props }) => {
   );
 };
 
-export default Input;
+export default Textarea;

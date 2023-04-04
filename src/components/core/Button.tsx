@@ -4,6 +4,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   size?: 'sm' | 'md' | 'lg';
   isFullWidth?: boolean;
+  colorScheme?: string;
 }
 
 const Button: React.FC<Props> = ({
@@ -11,6 +12,7 @@ const Button: React.FC<Props> = ({
   label,
   size = 'sm',
   isFullWidth,
+  colorScheme,
   ...props
 }) => {
   const checkSize = () => {
@@ -24,9 +26,11 @@ const Button: React.FC<Props> = ({
   };
   return (
     <button
-      className={`text-[${checkSize()}] bg-tertiary p-1 px-3 rounded-md hover:scale-125 transition duration-700 ease-in-out ${
+      className={`text-[${checkSize()}] ${
+        colorScheme ?? 'bg-tertiary'
+      }  px-6 py-4 rounded-md hover:scale-95 transition duration-700 ease-in-out ${
         isFullWidth ? 'w-full' : null
-      } p-2`}
+      } `}
       onClick={onClick}
       {...props}
     >
