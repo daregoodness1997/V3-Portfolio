@@ -4,7 +4,7 @@ import { styles } from '../styles';
 import Input from './core/Input';
 import { SectionWrapper } from './hoc';
 import { Button } from './core';
-import { slideIn, textVariant } from '../utils/motion';
+import { slideIn, textVariant } from '../lib/utils/motion';
 import { motion } from 'framer-motion';
 import Textarea from './core/Textarea';
 import { EarthCanvas } from './canvas';

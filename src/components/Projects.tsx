@@ -2,7 +2,7 @@ import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import { SectionWrapper } from './hoc';
 import { motion } from 'framer-motion';
-import { fadeIn, textVariant } from '../utils/motion';
+import { fadeIn, textVariant } from '../lib/utils/motion';
 import { styles } from '../styles';
 import { projects } from '../constants';
 import ProjectCard from './core/ProjectCard';

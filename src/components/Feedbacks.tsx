@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SectionWrapper } from './hoc';
-import { fadeIn, textVariant } from '../utils/motion';
+import { fadeIn, textVariant } from '../lib/utils/motion';
 import { styles } from '../styles';
 import { testimonials } from '../constants';
 import TestimonialCard from './core/TestimonialCard';

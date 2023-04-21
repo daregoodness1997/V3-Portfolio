@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { testimonials } from '../../constants';
-import { fadeIn } from '../../utils/motion';
+import { fadeIn } from '../../lib/utils/motion';
 import { styles } from '../../styles';
 
 interface TestimonialProps {

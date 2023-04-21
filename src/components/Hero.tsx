@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { Button } from './core';
 import { BoxCanvas, ComputersCanvas, WorkstationsCanvas } from './canvas';
-import { headContainerAnimation, headTextAnimation } from '../utils/motion';
+import { headContainerAnimation, headTextAnimation } from '../lib/utils/motion';
 
 const Hero = () => {
   return (

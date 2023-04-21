@@ -3,7 +3,7 @@ import { styles } from '../styles';
 import { services } from '../constants';
 import ServiceCard from './core/ServiceCard';
 import { SectionWrapper } from './hoc';
-import { fadeIn, textVariant } from '../utils/motion';
+import { fadeIn, textVariant } from '../lib/utils/motion';
 
 const About = () => {
   return (

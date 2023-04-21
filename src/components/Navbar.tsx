@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { navLinks } from '../constants';
 import { styles } from '../styles';
 import { Button } from './core';
-import { slideAnimation } from '../utils/motion';
+import { slideAnimation } from '../lib/utils/motion';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {

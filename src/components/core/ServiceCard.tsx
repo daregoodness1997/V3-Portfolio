@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import Tilt, { TiltProps } from 'react-parallax-tilt';
-import { fadeIn } from '../../utils/motion';
+import { fadeIn } from '../../lib/utils/motion';
 
 interface ServiceProps {
   title: string;

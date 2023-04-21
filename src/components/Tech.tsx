@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { technologies } from '../constants';
 import { styles } from '../styles';
-import { textVariant } from '../utils/motion';
+import { textVariant } from '../lib/utils/motion';
 import { BallCanvas } from './canvas';
 import { SectionWrapper } from './hoc';
 
