@@ -5,10 +5,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#050816',
+        primary: '#111',
         // primary: '#0D1116',
-        secondary: '#aaa6c3',
-        tertiary: '#151030',
+        secondary: '#eee',
+        tertiary: '#0F172A',
+        accent: 'rgba(0,0,0,0.4)',
+        cardColor: 'rgba(14,14,14,0.4)',
         'black-100': '#100d25',
         'black-200': '#090325',
         'white-100': '#f3f3f3',

@@ -24,7 +24,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
   return (
     <motion.div
       variants={fadeIn('', 'spring', index * 0.5, 0.75)}
-      className='bg-black-200 p-10 rounded-3xl xs:w-[320px]  w-full transition-all hover:bg-tertiary cursor-pointer'
+      className='bg-[#111] p-10 rounded-3xl xs:w-[320px]  w-full transition-all hover:bg-[#121212] cursor-pointer'
     >
       <p className='text-white font-black text-[48px]'>"</p>
       <p className='text-[14px]'>{testimonial}</p>

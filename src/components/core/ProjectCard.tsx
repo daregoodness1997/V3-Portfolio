@@ -18,7 +18,7 @@ const ProjectCard = ({
         variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
         className='w-full p-[1px] rounded-[20px] '
       >
-        <div className='bg-tertiary rounded-[20px] p-4 min-h-[280px] h-[420px] flex flex-col justify-evenly items-center'>
+        <div className='bg-accent rounded-[20px] p-4 min-h-[280px] h-[420px] flex flex-col justify-evenly items-center'>
           <img
             src={image}
             alt={name}

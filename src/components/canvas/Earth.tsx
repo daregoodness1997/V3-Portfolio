@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import Loader from '../Loader';
 
 const Earth = () => {
-  const earth = useGLTF('./planet/scene.gltf', true);
+  const earth = useGLTF('./earth/scene.gltf', true);
 
   return (
     <mesh>
@@ -13,7 +13,7 @@ const Earth = () => {
         groundColor='black'
         rotation={[-0.01, -0.2, -0.1]}
       />
-      <primitive object={earth.scene} scale={2.5} />
+      <primitive object={earth.scene} scale={2.0} />
     </mesh>
   );
 };

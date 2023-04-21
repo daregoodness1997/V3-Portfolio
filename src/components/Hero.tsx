@@ -2,35 +2,38 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { Button } from './core';
-import { BoxCanvas, ComputersCanvas } from './canvas';
+import { BoxCanvas, ComputersCanvas, WorkstationsCanvas } from './canvas';
+import { headContainerAnimation, headTextAnimation } from '../utils/motion';
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen sm:h-screen mx-auto `}>
+    <section className={`relative w-full sm:h-screen mx-auto `}>
       <div
-        className={`${styles.mpaddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-start gap-5 xs:flex-row sm:p-12`}
+        className={`${styles.mpaddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-start gap-5 xs:flex-col sm:p-12`}
       >
-        <div className='w-full xs:w-1/2 flex '>
-          <div className='flex flex-col sm:mx-5  mx-2 justify-start items-center sm:justify-start'>
-            <div className='w-5 h-5 rounded-full bg-[#915eff]' />
-            <div className='w-1 sm:h-80 h-40 violet-gradient' />
-          </div>
+        <motion.div
+          className='w-3/4 flex bg-accent backdrop-blur-md relative z-10 p-10 rounded-2xl'
+          {...headContainerAnimation}
+        >
           <div>
-            <h1 className='text-[32px] lg:text-6xl font-bold mb-4 '>
-              I design <span className='text-[#915eff]'>Websites</span> and also
+            <motion.h1 className='text-[32px] lg:text-7xl font-bold mb-4 '>
+              I design <span className='text-[#c2c2c2]'>Websites</span> and also
               develop them.
-            </h1>
-            <p className={` my-2 mb-4 text-white tex-[20px]`}>
+            </motion.h1>
+            <motion.p className={` my-2 mb-4 text-white tex-[20px]`}>
               I am always trying to find the perfect blend of creativity and
               technology
-            </p>
-            <Button label={'Contact Me'} size='md' />
+            </motion.p>
+            <Button
+              label={'Contact Me'}
+              size='md'
+              onClick={() => {
+                window.location.href = '#contact';
+              }}
+            />
           </div>
-        </div>
+        </motion.div>
 
-        <div className='w-full xs:w-1/2 sm:h-full h-[60vh]  '>
-          <ComputersCanvas />
-        </div>
         <div className='absolute xs:bottom-[20px] bottom-[-60px] left-0 flex justify-center items-center w-full z-10 '>
           <a href='#about'>
             <div
@@ -50,8 +53,15 @@ const Hero = () => {
           </a>
         </div>
       </div>
+      <div className='w-full h-screen absolute top-0 left-0 right-0 '>
+        <WorkstationsCanvas />
+      </div>
     </section>
   );
 };
 
 export default Hero;
+
+const Title = () => {
+  return <></>;
+};

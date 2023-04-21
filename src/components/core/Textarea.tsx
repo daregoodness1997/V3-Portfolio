@@ -10,7 +10,7 @@ const Textarea: React.FC<Textarea> = ({ error, label, ...props }) => {
     <div className='form-control'>
       <label htmlFor={props.name}>{label}</label>
       <textarea
-        className='px-6 py-4 bg-tertiary w-full rounded-md mt-2 placeholder:text-secondary outline-none'
+        className='px-6 py-4 bg-[#111] w-full rounded-md mt-2 placeholder:text-secondary outline-none'
         {...props}
       />
       {error ? <div></div> : null}
