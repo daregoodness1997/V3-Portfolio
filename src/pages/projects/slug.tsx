@@ -61,7 +61,7 @@ const SingleProject = () => {
 
   const navigate = useNavigate();
   return (
-    <Layout>
+    <>
       <motion.section
         variants={staggerContainer()}
         initial='hidden'
@@ -127,7 +127,7 @@ const SingleProject = () => {
           )}
         </div>
       </motion.section>
-    </Layout>
+    </>
   );
 };
 

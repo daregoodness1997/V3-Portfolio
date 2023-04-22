@@ -15,7 +15,10 @@ import Layout from '../layout';
 
 const Home = () => {
   return (
-    <Layout isIndex={true}>
+    <>
+      <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        <Hero />
+      </div>
       <About />
       <Tech />
       <Projects />
@@ -25,7 +28,7 @@ const Home = () => {
         <Contact />
         <StarsCanvas />
       </div>
-    </Layout>
+    </>
   );
 };
 

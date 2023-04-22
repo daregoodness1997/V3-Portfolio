@@ -37,7 +37,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <motion.section
         variants={staggerContainer()}
         initial='hidden'
@@ -86,7 +86,7 @@ const Projects = () => {
         </div>
       </motion.section>
       <StarsCanvas />
-    </Layout>
+    </>
   );
 };
 
