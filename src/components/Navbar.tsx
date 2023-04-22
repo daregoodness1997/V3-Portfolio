@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
-
   return (
     <AnimatePresence mode='wait'>
       <nav
@@ -57,7 +56,7 @@ const Navbar = () => {
                 } hover:text-white text-[14px] font-medium cursor-pointer`}
                 onClick={() => setActive(nav.title)}
               >
-                <a href={`/#${nav.id}`}>{nav.title}</a>
+                <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
 
