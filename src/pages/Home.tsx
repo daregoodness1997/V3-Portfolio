@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   About,
   Contact,
@@ -14,6 +14,9 @@ import {
 import Layout from '../layout';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>

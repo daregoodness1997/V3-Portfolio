@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from '../lib/utils/motion';
 const About = () => {
   return (
     <>
-      <div className='sm:mt-24 mt-16'>
+      <div className='sm:mt-24 mt-[100vh] '>
         <motion.div variants={textVariant()}>
           <p className={styles.heroSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>My General Synopsis.</h2>

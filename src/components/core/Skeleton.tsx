@@ -9,15 +9,15 @@ interface SkeletonProps {
 const Skeletal: React.FC<SkeletonProps> = ({ height, width, count }) => {
   return (
     <Skeleton
-      height={height}
-      width={width}
+      height={'24px'}
+      width={'320px'}
       count={count}
       duration={8}
       enableAnimation={true}
       direction={'ltr'}
       borderRadius={'4px'}
-      baseColor={'#1A1B1F'}
-      highlightColor={'#1f2124'}
+      baseColor={'red'}
+      highlightColor={'blue'}
     />
   );
 };
