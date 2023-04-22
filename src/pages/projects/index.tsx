@@ -63,7 +63,11 @@ const Projects = () => {
             </motion.p>
           </div>
 
-          {!loading ? (
+          {loading ? (
+            <div className='mt-10'>
+              <h2>Loading...</h2>
+            </div>
+          ) : (
             <div className='mt-10 '>
               <Input placeholder='Search Here...' name='search' />
               <div className='mt-4 flex flex-wrap gap-10'>
@@ -77,12 +81,6 @@ const Projects = () => {
                   />
                 ))}
               </div>
-            </div>
-          ) : (
-            <div className='mt-4 flex flex-wrap gap-10'>
-              {[...Array(10)].map(idx => (
-                <Skeletal />
-              ))}
             </div>
           )}
         </div>

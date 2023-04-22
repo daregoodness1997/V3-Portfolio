@@ -8,6 +8,7 @@ import ContentImage from '../../components/core/ContentImage';
 import { styles } from '../../styles';
 import ProjectHeader from '../../components/projects/ProjectHeader';
 import { Button } from '../../components/core';
+import ProjectBody from '../../components/projects/ProjectBody';
 
 type ProjectType = {
   fields: {
@@ -15,6 +16,9 @@ type ProjectType = {
     summary?: string;
     coverImage?: { fields: { file: { url: string } } };
     author?: any;
+    content?: any;
+    github?: string;
+    website?: string;
   };
 };
 const SingleProject = () => {
@@ -53,6 +57,7 @@ const SingleProject = () => {
     'green-text-gradient',
     'pink-text-gradient',
   ];
+  console.log(project);
 
   const navigate = useNavigate();
   return (
@@ -83,15 +88,36 @@ const SingleProject = () => {
                       ?.url || ''
                   }
                 />
+                <motion.div className='mt-6'>
+                  <h2 className={styles.sectionHeadText}>
+                    {project?.fields.title}.
+                  </h2>
+                  <p className='italic text-gray-300 mb-6'>
+                    {project?.fields.summary}
+                  </p>
+                </motion.div>
+                <ProjectBody content={project?.fields?.content || ''} />
+
+                {project?.fields?.website && (
+                  <a
+                    href={project?.fields?.github}
+                    target='_blank'
+                    className='border border-gray-100 rounded-md p-6 block my-4'
+                  >
+                    {project?.fields?.website}
+                  </a>
+                )}
+                {project?.fields?.github && (
+                  <a
+                    href={project?.fields?.github}
+                    target='_blank'
+                    className='border border-gray-100 rounded-md p-6 block  my-4'
+                  >
+                    {project?.fields?.github}
+                  </a>
+                )}
               </motion.div>
-              <motion.div className='mt-6'>
-                <h2 className={styles.sectionHeadText}>
-                  {project?.fields.title}.
-                </h2>
-                <p className='italic text-gray-300 mb-6'>
-                  {project?.fields.summary}
-                </p>
-              </motion.div>
+
               {tags.map((tag, idx) => (
                 <span key={idx} className={`mr-2 ${tagColors[idx]}`}>
                   #{tag.sys.id}

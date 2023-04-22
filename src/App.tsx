@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import Home from './pages/Home';
 import Projects from './pages/projects';
 import SingleProject from './pages/projects/slug';
+import Layout from './layout';
 
 const App = () => {
   const { scrollYProgress } = useScroll();
