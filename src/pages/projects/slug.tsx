@@ -100,7 +100,7 @@ const SingleProject = () => {
 
                 {project?.fields?.website && (
                   <a
-                    href={project?.fields?.github}
+                    href={project?.fields?.website}
                     target='_blank'
                     className='border border-gray-100 rounded-md p-6 block my-4'
                   >
