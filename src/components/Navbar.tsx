@@ -59,6 +59,7 @@ const Navbar = () => {
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
+
             <Button label={'Resume'} />
           </motion.ul>
         </div>

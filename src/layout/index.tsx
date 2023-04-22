@@ -11,6 +11,7 @@ import {
   StarsCanvas,
   Tech,
 } from '../components';
+import { AnimatePresence } from 'framer-motion';
 interface Props {
   isIndex?: boolean;
   children?: React.ReactNode;
@@ -18,15 +19,17 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ isIndex, children }) => {
   return (
-    <div className='relative z-0 bg-primary'>
-      <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-        <Navbar />
-        {isIndex && <Hero />}
-      </div>
-      {children}
+    <AnimatePresence mode='wait'>
+      <div className='relative z-0 bg-primary'>
+        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+          <Navbar />
+          {isIndex && <Hero />}
+        </div>
+        {children}
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </AnimatePresence>
   );
 };
 

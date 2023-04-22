@@ -3,29 +3,29 @@ import React from 'react';
 import Tilt, { TiltProps } from 'react-parallax-tilt';
 import { github } from '../../assets';
 import { fadeIn } from '../../lib/utils/motion';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   name: string;
   image?: string;
   description?: string;
-  index?: any;
-  source_code_link?: string;
+  link: string;
   tags?: { name: string; color?: string }[];
 }
 
-const ProjectCard: React.FC<Props> = ({
+const ItemCard: React.FC<Props> = ({
   name,
   image,
   description,
-  index,
   tags,
-  source_code_link,
+  link,
 }) => {
+  const navigate = useNavigate();
   return (
-    <Tilt className='xs:w-[320px]  w-full cursor-pointer' scale={1.2}>
+    <Tilt className='xs:w-[320px]  w-full cursor-pointer ' scale={1.2}>
       <motion.div
-        variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
-        className='w-full p-[1px] rounded-[20px] '
+        className='w-full p-[1px] rounded-[20px] hover:border hover:border-gray-100 '
+        onClick={() => navigate(link)}
       >
         <div className='bg-accent rounded-[20px] p-4 min-h-[280px] h-[420px] flex flex-col justify-evenly items-center'>
           <img
@@ -34,21 +34,8 @@ const ProjectCard: React.FC<Props> = ({
             className='w-full h-48 object-cover rounded-md'
           />
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(source_code_link, '_blank')}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer absolute top-4 right-4'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
-            </div>
-          </div>
-
           <div className='mt-5'>
-            <h3 className='text-white font-bold text-[24px] ] mt-2'>{name}</h3>
+            <h3 className='text-white font-bold text-[20px] ] mt-2'>{name}</h3>
             <p className='mt-2 text-secondary text-[14px] h-[105px] text-ellipsis overflow-hidden'>
               {description}
             </p>
@@ -68,4 +55,4 @@ const ProjectCard: React.FC<Props> = ({
   );
 };
 
-export default ProjectCard;
+export default ItemCard;
