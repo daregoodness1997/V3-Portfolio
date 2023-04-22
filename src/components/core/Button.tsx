@@ -27,10 +27,10 @@ const Button: React.FC<Props> = ({
   return (
     <button
       className={`text-[${checkSize()}] ${
-        colorScheme ?? 'bg-tertiary'
-      }  px-6 py-4 rounded-md hover:scale-95 transition duration-700 ease-in-out ${
+        colorScheme ?? 'bg-accent'
+      }  px-6 py-2 rounded-full hover:scale-95 transition duration-700 ease-in-out ${
         isFullWidth ? 'w-full' : null
-      } `}
+      } border border-gray-100`}
       onClick={onClick}
       {...props}
     >

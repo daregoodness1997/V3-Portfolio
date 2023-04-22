@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { styles } from '../styles';
-import { textVariant } from '../utils/motion';
+import { textVariant } from '../lib/utils/motion';
 import { SectionWrapper } from './hoc';
 import {
   VerticalTimeline,

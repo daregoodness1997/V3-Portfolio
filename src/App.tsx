@@ -1,17 +1,9 @@
-import {
-  About,
-  Contact,
-  Experience,
-  Feedbacks,
-  Footer,
-  Hero,
-  Navbar,
-  StarsCanvas,
-  Tech,
-  Projects,
-} from './components';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import Home from './pages/Home';
+import Projects from './pages/projects';
+import SingleProject from './pages/projects/slug';
+import Layout from './layout';
 
 const App = () => {
   const { scrollYProgress } = useScroll();
@@ -23,22 +15,11 @@ const App = () => {
     <>
       <motion.div className='progress-bar' style={{ scaleX }} />
       <Router>
-        <div className='relative z-0 bg-primary'>
-          <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-            <Navbar />
-            <Hero />
-          </div>
-          <About />
-          <Tech />
-          <Projects />
-          <Experience />
-          <Feedbacks />
-          <div className='relative z-0'>
-            <Contact />
-            <StarsCanvas />
-          </div>
-          <Footer />
-        </div>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/projects/:slug' element={<SingleProject />} />
+        </Routes>
       </Router>
     </>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { staggerContainer } from '../../utils/motion';
+import { staggerContainer } from '../../lib/utils/motion';
 import { styles } from '../../styles';
 interface SectionWrapperProps {
   idName: string;

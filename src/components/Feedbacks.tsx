@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { SectionWrapper } from './hoc';
-import { fadeIn, textVariant } from '../utils/motion';
+import { fadeIn, textVariant } from '../lib/utils/motion';
 import { styles } from '../styles';
 import { testimonials } from '../constants';
 import TestimonialCard from './core/TestimonialCard';
 
 const Feedbacks = () => {
   return (
-    <div className='mt-12 bg-black-100'>
+    <div className='mt-12 bg-[#141414]'>
       <div className={`${styles.padding} max-w-7xl mx-auto`}>
         <motion.div variants={textVariant()}>
           <p className={styles.heroSubText}>What people say</p>

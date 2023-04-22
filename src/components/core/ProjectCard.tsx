@@ -2,9 +2,18 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import Tilt, { TiltProps } from 'react-parallax-tilt';
 import { github } from '../../assets';
-import { fadeIn } from '../../utils/motion';
+import { fadeIn } from '../../lib/utils/motion';
 
-const ProjectCard = ({
+interface Props {
+  name: string;
+  image?: string;
+  description?: string;
+  index?: any;
+  source_code_link?: string;
+  tags?: { name: string; color?: string }[];
+}
+
+const ProjectCard: React.FC<Props> = ({
   name,
   image,
   description,
@@ -18,7 +27,7 @@ const ProjectCard = ({
         variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
         className='w-full p-[1px] rounded-[20px] '
       >
-        <div className='bg-tertiary rounded-[20px] p-4 min-h-[280px] h-[420px] flex flex-col justify-evenly items-center'>
+        <div className='bg-accent rounded-[20px] p-4 min-h-[280px] h-[420px] flex flex-col justify-evenly items-center'>
           <img
             src={image}
             alt={name}
@@ -46,11 +55,12 @@ const ProjectCard = ({
           </div>
 
           <div className='flex gap-2 mt-2'>
-            {tags.map((tag, idx) => (
-              <div className={`text-[14px] ${tag?.color}`} key={idx}>
-                #{tag.name}
-              </div>
-            ))}
+            {tags &&
+              tags.map((tag, idx) => (
+                <div className={`text-[14px] ${tag?.color}`} key={idx}>
+                  #{tag.name}
+                </div>
+              ))}
           </div>
         </div>
       </motion.div>
