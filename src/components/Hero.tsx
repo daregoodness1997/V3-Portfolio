@@ -12,11 +12,11 @@ const Hero = () => {
         className={`${styles.mpaddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-start gap-5 xs:flex-col sm:p-12`}
       >
         <motion.div
-          className='w-3/4 flex bg-accent backdrop-blur-md relative z-10 p-10 rounded-2xl'
+          className='xs:w-3/4 w-full flex bg-accent backdrop-blur-md relative z-10 p-10 rounded-2xl'
           {...headContainerAnimation}
         >
           <div>
-            <motion.h1 className='text-[32px] lg:text-7xl font-bold mb-4 '>
+            <motion.h1 className='text-[28px] lg:text-7xl font-bold mb-4 '>
               I design <span className='text-[#c2c2c2]'>Websites</span> and also
               develop them.
             </motion.h1>
@@ -34,7 +34,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <div className='absolute xs:bottom-[20px] bottom-[-60px] left-0 flex justify-center items-center w-full z-10 '>
+        <div className='absolute xs:bottom-[20px] bottom-[-75vh] left-0 flex justify-center items-center w-full z-10 '>
           <a href='#about'>
             <div
               className='w-[32px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2
@@ -53,7 +53,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div className='w-full h-screen absolute top-0 left-0 right-0 '>
+      <div className='w-full h-screen absolute top-0 left-0 right-0 sm:block hidden '>
         <WorkstationsCanvas />
       </div>
     </section>

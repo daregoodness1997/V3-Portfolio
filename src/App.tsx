@@ -15,11 +15,13 @@ const App = () => {
     <>
       <motion.div className='progress-bar' style={{ scaleX }} />
       <Router>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/projects/:slug' element={<SingleProject />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/projects/:slug' element={<SingleProject />} />
+          </Routes>
+        </Layout>
       </Router>
     </>
   );

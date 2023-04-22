@@ -37,7 +37,7 @@ const Navbar = () => {
             </motion.header>
             <motion.div
               {...slideAnimation('down')}
-              className='text-[12px] py-2 px-4 rounded-full bg-accent  backdrop-blur-md font-semibold shadow-card'
+              className='text-[12px] py-2 px-4 rounded-full bg-accent  backdrop-blur-md font-semibold shadow-card xs:block hidden'
             >
               Portfolio V3, Also currently working on useeducator.com and
               braille ayo

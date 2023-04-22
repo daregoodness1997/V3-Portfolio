@@ -9,6 +9,7 @@ import { styles } from '../../styles';
 import ProjectHeader from '../../components/projects/ProjectHeader';
 import { Button } from '../../components/core';
 import ProjectBody from '../../components/projects/ProjectBody';
+import Skeletal from '../../components/core/Skeleton';
 
 type ProjectType = {
   fields: {
@@ -57,77 +58,78 @@ const SingleProject = () => {
     'green-text-gradient',
     'pink-text-gradient',
   ];
-  console.log(project);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
   return (
-    <Layout>
-      <motion.section
-        variants={staggerContainer()}
-        initial='hidden'
-        whileInView={'show'}
-        viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
-      >
-        <div className='sm:mt-10 mt-8'>
-          <Button label='Back' onClick={() => navigate(-1)} />
-          {loading ? (
-            <h1>Loading...</h1>
-          ) : (
-            <>
-              <motion.div
-                // variants={fadeIn('', '', 0.1, 1)}
-                className='sm:mt-14 mt-12'
-              >
-                <ProjectHeader
-                  title={project?.fields.title}
-                  coverImage={project?.fields?.coverImage?.fields.file.url}
-                  authorName={project?.fields?.author?.fields?.name || ''}
-                  authorUrl={
-                    project?.fields?.author?.fields?.picture?.fields?.file
-                      ?.url || ''
-                  }
-                />
-                <motion.div className='mt-6'>
-                  <h2 className={styles.sectionHeadText}>
-                    {project?.fields.title}.
-                  </h2>
-                  <p className='italic text-gray-300 mb-6'>
-                    {project?.fields.summary}
-                  </p>
-                </motion.div>
-                <ProjectBody content={project?.fields?.content || ''} />
-
-                {project?.fields?.website && (
-                  <a
-                    href={project?.fields?.website}
-                    target='_blank'
-                    className='border border-gray-100 rounded-md p-6 block my-4'
-                  >
-                    {project?.fields?.website}
-                  </a>
-                )}
-                {project?.fields?.github && (
-                  <a
-                    href={project?.fields?.github}
-                    target='_blank'
-                    className='border border-gray-100 rounded-md p-6 block  my-4'
-                  >
-                    {project?.fields?.github}
-                  </a>
-                )}
-              </motion.div>
-
-              {tags.map((tag, idx) => (
-                <span key={idx} className={`mr-2 ${tagColors[idx]}`}>
-                  #{tag.sys.id}
-                </span>
-              ))}
-            </>
-          )}
+    <>
+      {loading ? (
+        <div className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
+          <h1 className='mt-24'>loading...</h1>
         </div>
-      </motion.section>
-    </Layout>
+      ) : (
+        <motion.section
+          variants={staggerContainer()}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{ once: true, amount: 0.25 }}
+          className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+        >
+          <div className='sm:mt-10 mt-8'>
+            <Button label='Back' onClick={() => navigate(-1)} />
+            <motion.div
+              // variants={fadeIn('', '', 0.1, 1)}
+              className='sm:mt-14 mt-12'
+            >
+              <ProjectHeader
+                title={project?.fields.title}
+                coverImage={project?.fields?.coverImage?.fields.file.url}
+                authorName={project?.fields?.author?.fields?.name || ''}
+                authorUrl={
+                  project?.fields?.author?.fields?.picture?.fields?.file?.url ||
+                  ''
+                }
+              />
+              <motion.div className='mt-6'>
+                <h2 className={styles.sectionHeadText}>
+                  {project?.fields.title}.
+                </h2>
+                <p className='italic text-gray-300 mb-6'>
+                  {project?.fields.summary}
+                </p>
+              </motion.div>
+              <ProjectBody content={project?.fields?.content || ''} />
+
+              {project?.fields?.website && (
+                <a
+                  href={project?.fields?.website}
+                  target='_blank'
+                  className='border border-gray-100 rounded-md p-6 block my-4'
+                >
+                  {project?.fields?.website}
+                </a>
+              )}
+              {project?.fields?.github && (
+                <a
+                  href={project?.fields?.github}
+                  target='_blank'
+                  className='border border-gray-100 rounded-md p-6 block  my-4'
+                >
+                  {project?.fields?.github}
+                </a>
+              )}
+            </motion.div>
+
+            {tags.map((tag, idx) => (
+              <span key={idx} className={`mr-2 ${tagColors[idx]}`}>
+                #{tag.sys.id}
+              </span>
+            ))}
+          </div>
+        </motion.section>
+      )}
+    </>
   );
 };
 
