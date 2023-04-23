@@ -9,6 +9,7 @@ import ItemCard from './core/ItemCard';
 import { client } from '../lib/contentful';
 import { Button } from './core';
 import { useNavigate } from 'react-router-dom';
+import Skeletal from './core/Skeleton';
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -64,8 +65,19 @@ const Projects = () => {
           </motion.p>
         </div>
         {loading ? (
-          <div className='mt-10'>
-            <h2>Loading...</h2>
+          <div className={`mt-20`}>
+            <Skeletal height={'32px'} />
+            <div className='my-2'>
+              <Skeletal height={'56px'} noOfArray={2} />
+            </div>
+            <div className='my-4'>
+              <Skeletal height={'40px'} />
+            </div>
+            <div className='my-10 grid xs:grid-cols-3 grid-cols-1 gap-4'>
+              {[...Array(10)].map(index => (
+                <Skeletal key={index} height={'320px'} width={'300px'} />
+              ))}
+            </div>
           </div>
         ) : (
           <div className='mt-20 flex flex-wrap gap-10'>
