@@ -79,4 +79,4 @@ const WorkstationsCanvas = () => {
   );
 };
 
-export default WorkstationsCanvas;
+export default React.memo(WorkstationsCanvas);
