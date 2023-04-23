@@ -42,12 +42,24 @@ const Projects = () => {
   return (
     <>
       {loading ? (
-        <div className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
-          <h1 className='mt-24'>loading...</h1>
+        <div
+          className={`${styles.padding} max-w-7xl mx-auto relative z-0 mt-24`}
+        >
+          <Skeletal height={'32px'} />
+          <div className='my-2'>
+            <Skeletal height={'56px'} noOfArray={2} />
+          </div>
+          <div className='my-4'>
+            <Skeletal height={'40px'} />
+          </div>
+          <div className='my-10 grid grid-cols-3 gap-4'>
+            {[...Array(10)].map(index => (
+              <Skeletal key={index} height={'320px'} width={'300px'} />
+            ))}
+          </div>
         </div>
       ) : (
         <div>
-          {' '}
           <motion.section
             variants={staggerContainer()}
             initial='hidden'

@@ -65,8 +65,19 @@ const SingleProject = () => {
   return (
     <>
       {loading ? (
-        <div className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
-          <h1 className='mt-24'>loading...</h1>
+        <div
+          className={`${styles.padding} max-w-7xl mx-auto relative z-0 mt-20`}
+        >
+          <Skeletal height={'24px'} />
+          <div className='my-8'>
+            <Skeletal height={'40px'} noOfArray={2} />
+          </div>
+          <div className='my-8'>
+            <Skeletal height={'400px'} />
+          </div>
+          <div className='my-8'>
+            <Skeletal height={'30px'} noOfArray={10} />
+          </div>
         </div>
       ) : (
         <motion.section
@@ -74,7 +85,7 @@ const SingleProject = () => {
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: true, amount: 0.25 }}
-          className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+          className={`${styles.padding} max-w-7xl mx-auto relative z-0 w-full`}
         >
           <div className='sm:mt-10 mt-8'>
             <Button label='Back' onClick={() => navigate(-1)} />
