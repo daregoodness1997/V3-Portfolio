@@ -3,7 +3,7 @@ import { styles } from '../styles';
 import { services } from '../constants';
 import ServiceCard from './core/ServiceCard';
 import { SectionWrapper } from './hoc';
-import { fadeIn, textVariant } from '../lib/utils/motion';
+import { fadeIn, staggerContainer, textVariant } from '../lib/utils/motion';
 
 const About = () => {
   return (
@@ -53,11 +53,16 @@ const About = () => {
           the Web3 industry.
         </motion.p>
 
-        <div className='mt-20 flex flex-wrap gap-10'>
+        <motion.div
+          variants={staggerContainer()}
+          initial='hidden'
+          whileInView={'show'}
+          className='mt-20 flex flex-wrap gap-10'
+        >
           {services.map((service, idx) => (
             <ServiceCard key={idx} index={idx} {...service} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </>
   );

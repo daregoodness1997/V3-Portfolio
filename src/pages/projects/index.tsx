@@ -68,7 +68,11 @@ const Projects = () => {
             className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
           >
             <div className='sm:mt-24 mt-16'>
-              <motion.div variants={textVariant()}>
+              <motion.div
+                variants={textVariant()}
+                initial='hidden'
+                whileInView={'show'}
+              >
                 <p className={styles.heroSubText}>Projects</p>
                 <h2 className={styles.sectionHeadText}>My Recent Projects.</h2>
               </motion.div>
@@ -76,6 +80,8 @@ const Projects = () => {
                 <motion.p
                   variants={fadeIn('', '', 0.1, 1)}
                   className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+                  initial='hidden'
+                  whileInView={'show'}
                 >
                   Following projects showcases my skills and experience through
                   real-world examples of my work. Each project is briefly
