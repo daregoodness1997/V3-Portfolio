@@ -9,7 +9,11 @@ const About = () => {
   return (
     <>
       <div className='sm:mt-24 mt-[90vh] '>
-        <motion.div variants={textVariant()}>
+        <motion.div
+          variants={textVariant()}
+          initial='hidden'
+          whileInView={'show'}
+        >
           <p className={styles.heroSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>My General Synopsis.</h2>
         </motion.div>
@@ -17,6 +21,8 @@ const About = () => {
         <motion.p
           variants={fadeIn('', '', 0.1, 1)}
           className='mt-4 text-secondary leading-[30px]'
+          initial='hidden'
+          whileInView={'show'}
         >
           I create products using various skillsets that I have developed
           through my education as a mechanical engineer and due to to work
@@ -26,6 +32,8 @@ const About = () => {
         <motion.p
           variants={fadeIn('', '', 0.1, 1)}
           className='mt-4 text-secondary leading-[30px]'
+          initial='hidden'
+          whileInView={'show'}
         >
           I have a keen interest in healthcare and I possess specialized
           knowledge and interest in utilizing cutting-edge technologies such as
@@ -35,6 +43,8 @@ const About = () => {
         <motion.p
           variants={fadeIn('', '', 0.1, 1)}
           className='mt-4 text-secondary leading-[30px]'
+          initial='hidden'
+          whileInView={'show'}
         >
           I have more than 3 years experience as a software developer and
           product designer proficient with javascript and typescript, and

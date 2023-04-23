@@ -9,7 +9,11 @@ const Feedbacks = () => {
   return (
     <div className='mt-12 bg-[#141414]'>
       <div className={`${styles.padding} max-w-7xl mx-auto`}>
-        <motion.div variants={textVariant()}>
+        <motion.div
+          variants={textVariant()}
+          initial='hidden'
+          whileInView={'show'}
+        >
           <p className={styles.heroSubText}>What people say</p>
           <h2 className={styles.sectionHeadText}>Testimonials.</h2>
         </motion.div>

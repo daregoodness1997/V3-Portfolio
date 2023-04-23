@@ -26,7 +26,11 @@ const Tech = () => {
   return (
     <>
       <div className='sm:mt-18 mt-16'>
-        <motion.div variants={textVariant()}>
+        <motion.div
+          variants={textVariant()}
+          initial='hidden'
+          whileInView={'show'}
+        >
           <p className={styles.heroSubText}>Technologies</p>
           <h2 className={styles.sectionHeadText}>My Technology Stack.</h2>
         </motion.div>

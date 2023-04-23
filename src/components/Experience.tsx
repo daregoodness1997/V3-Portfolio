@@ -15,7 +15,11 @@ const Experience = () => {
   return (
     <>
       <div className='sm:mt-24 mt-48'>
-        <motion.div variants={textVariant()}>
+        <motion.div
+          variants={textVariant()}
+          initial='hidden'
+          whileInView={'show'}
+        >
           <p className={styles.heroSubText}>Experience</p>
           <h2 className={styles.sectionHeadText}>My Work Experience.</h2>
         </motion.div>
