@@ -5,13 +5,31 @@ import { styles } from '../styles';
 import { Button } from './core';
 import { slideAnimation } from '../lib/utils/motion';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
+  const [expanded, setExpanded] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width:500px)');
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = e => {
+      setIsMobile(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, []);
   return (
     <AnimatePresence mode='wait'>
       <nav
-        className={`${styles.paddingX} w-full flex items-center py-6 fixed top-0 z-20 bg-[transparent] backdrop-blur-md`}
+        className={`${styles.paddingX}  flex items-center py-6 fixed top-0 z-20 bg-[transparent] backdrop-blur-md w-screen`}
       >
         <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
           <motion.div
@@ -62,6 +80,32 @@ const Navbar = () => {
 
             <Button label={'Resume'} />
           </motion.ul>
+          <motion.div
+            className='xs:hidden block cursor-pointer'
+            onClick={() => setExpanded(!expanded)}
+          >
+            <AiOutlineMenu />
+          </motion.div>
+          {expanded && isMobile && (
+            <motion.ul
+              {...slideAnimation('down')}
+              className='list-none p-8 bg-primary backdrop-blur-md rounded-md absolute top-20 left-2 right-2 '
+            >
+              {navLinks.map(nav => (
+                <li
+                  key={nav.id}
+                  className={`${
+                    active === nav.title ? 'text-white' : 'text-secondary'
+                  } hover:text-white text-[16px] font-medium cursor-pointer py-4 px-2 rounded-mds`}
+                  onClick={() => setActive(nav.title)}
+                >
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                </li>
+              ))}
+
+              <Button label={'Resume'} isFullWidth={true} />
+            </motion.ul>
+          )}
         </div>
       </nav>
     </AnimatePresence>

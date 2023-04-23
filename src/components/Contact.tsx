@@ -33,10 +33,10 @@ const Contact = () => {
   };
   return (
     <>
-      <div className='sm:mt-12 mt-8 flex  gap-4 justify-between'>
+      <div className='sm:mt-12 mt-8 flex xs:flex-row flex-col gap-4 justify-between'>
         <motion.div
           variants={slideIn('left', 'tween', 0.2, 1)}
-          className=' bg-accent sm:p-16 px-6 py-10 rounded-2xl w-1/2'
+          className=' bg-accent sm:p-16 px-6 py-10 rounded-2xl xs:w-1/2 w-full'
         >
           <motion.div variants={textVariant()}>
             <p className={styles.heroSubText}>Get in touch</p>

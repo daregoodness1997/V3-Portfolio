@@ -20,7 +20,9 @@ const Hero = () => {
               I design <span className='text-[#c2c2c2]'>Websites</span> and also
               develop them.
             </motion.h1>
-            <motion.p className={` my-2 mb-4 text-white tex-[20px]`}>
+            <motion.p
+              className={` my-2 mb-4 text-white text-[14px] lg:text-[20px]`}
+            >
               I am always trying to find the perfect blend of creativity and
               technology
             </motion.p>
@@ -34,7 +36,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <div className='absolute xs:bottom-[20px] bottom-[-75vh] left-0 flex justify-center items-center w-full z-10 '>
+        <div className='absolute xs:bottom-[20px] bottom-[-72vh] left-0 flex justify-center items-center w-full z-10 '>
           <a href='#about'>
             <div
               className='w-[32px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2

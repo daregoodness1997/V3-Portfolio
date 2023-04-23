@@ -1,24 +1,30 @@
 import React from 'react';
 import Skeleton, { SkeletonStyleProps } from 'react-loading-skeleton';
 interface SkeletonProps {
+  noOfArray?: number;
   height?: number | string;
   width?: number | string;
-  count?: number;
 }
 
-const Skeletal: React.FC<SkeletonProps> = ({ height, width, count }) => {
+const Skeletal: React.FC<SkeletonProps> = ({
+  noOfArray = 1,
+  height,
+  width,
+}) => {
   return (
-    <Skeleton
-      height={'24px'}
-      width={'320px'}
-      count={count}
-      duration={8}
-      enableAnimation={true}
-      direction={'ltr'}
-      borderRadius={'4px'}
-      baseColor={'red'}
-      highlightColor={'blue'}
-    />
+    <div className='w-full gap-2 flex flex-col'>
+      {[...Array(noOfArray)].map(index => (
+        <Skeleton
+          key={index}
+          highlightColor={'#0A0A0A'}
+          baseColor={'#141414'}
+          height={height ? height : '48px'}
+          width={width && width}
+          borderRadius={8}
+          enableAnimation={true}
+        />
+      ))}
+    </div>
   );
 };
 
