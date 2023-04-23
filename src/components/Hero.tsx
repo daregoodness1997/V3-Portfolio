@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { Button } from './core';
-import { BoxCanvas, ComputersCanvas, WorkstationsCanvas } from './canvas';
-import { headContainerAnimation, headTextAnimation } from '../lib/utils/motion';
+import { WorkstationsCanvas } from './canvas';
+import { slideIn } from '../lib/utils/motion';
 
 const Hero = () => {
   return (
@@ -13,7 +13,7 @@ const Hero = () => {
       >
         <motion.div
           className='xs:w-3/4 w-full flex bg-accent backdrop-blur-md relative z-10 p-10 rounded-2xl'
-          {...headContainerAnimation}
+          variants={slideIn('left', 'tween', 0.2, 1)}
         >
           <div>
             <motion.h1 className='text-[28px] lg:text-7xl font-bold mb-4 '>
