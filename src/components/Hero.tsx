@@ -14,6 +14,8 @@ const Hero = () => {
         <motion.div
           className='xs:w-3/4 w-full flex bg-accent backdrop-blur-md relative z-10 p-10 rounded-2xl'
           variants={slideIn('left', 'tween', 0.2, 1)}
+          initial='hidden'
+          whileInView={'show'}
         >
           <div>
             <motion.h1 className='text-[28px] lg:text-7xl font-bold mb-4 '>

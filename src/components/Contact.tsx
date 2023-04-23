@@ -37,8 +37,14 @@ const Contact = () => {
         <motion.div
           variants={slideIn('left', 'tween', 0.2, 1)}
           className=' bg-accent sm:p-16 px-6 py-10 rounded-2xl xs:w-1/2 w-full'
+          initial='hidden'
+          whileInView={'show'}
         >
-          <motion.div variants={textVariant()}>
+          <motion.div
+            variants={textVariant()}
+            initial='hidden'
+            whileInView={'show'}
+          >
             <p className={styles.heroSubText}>Get in touch</p>
             <h2 className={styles.sectionHeadText}>Contact Me.</h2>
           </motion.div>
