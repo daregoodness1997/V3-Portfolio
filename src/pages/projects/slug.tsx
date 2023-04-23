@@ -87,7 +87,7 @@ const SingleProject = () => {
           viewport={{ once: true, amount: 0.25 }}
           className={`${styles.padding} max-w-7xl mx-auto relative z-0 w-full`}
         >
-          <div className='sm:mt-10 mt-8'>
+          <div className='sm:mt-10 mt-24 sm:px-2'>
             <Button label='Back' onClick={() => navigate(-1)} />
             <motion.div
               // variants={fadeIn('', '', 0.1, 1)}
@@ -132,11 +132,13 @@ const SingleProject = () => {
               )}
             </motion.div>
 
-            {tags.map((tag, idx) => (
-              <span key={idx} className={`mr-2 ${tagColors[idx]}`}>
-                #{tag.sys.id}
-              </span>
-            ))}
+            <div className='flex gap-2 flex-wrap '>
+              {tags.map((tag, idx) => (
+                <span key={idx} className={`${tagColors[idx]}`}>
+                  #{tag.sys.id}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.section>
       )}

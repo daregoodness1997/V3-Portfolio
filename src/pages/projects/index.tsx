@@ -52,7 +52,7 @@ const Projects = () => {
           <div className='my-4'>
             <Skeletal height={'40px'} />
           </div>
-          <div className='my-10 grid grid-cols-3 gap-4'>
+          <div className='my-10 grid xs:grid-cols-3 grid-cols-1 gap-4'>
             {[...Array(10)].map(index => (
               <Skeletal key={index} height={'320px'} width={'300px'} />
             ))}
@@ -67,7 +67,7 @@ const Projects = () => {
             viewport={{ once: true, amount: 0.25 }}
             className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
           >
-            <div className='sm:mt-24 mt-16'>
+            <div className='mt-24'>
               <motion.div
                 variants={textVariant()}
                 initial='hidden'

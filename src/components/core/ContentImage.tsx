@@ -11,7 +11,7 @@ const ContentImage: React.FC<Props> = ({ src, alt }) => {
       <img
         src={src}
         alt={alt}
-        className='w-full rounded-md h-[520px] object-cover'
+        className='w-full rounded-md h-min-[320px] object-cover'
       />
     </div>
   );

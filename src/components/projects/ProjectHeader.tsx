@@ -24,7 +24,7 @@ const ProjectHeader: React.FC<Props> = ({
         <Avatar name={authorName} src={authorUrl} />
         {/* <DateComponent dateString={date} className='text-sm text-gray-400' /> */}
       </div>
-      <div className='mb-8 md:mb-16 sm:mx-0'>
+      <div className='mb-8 md:mb-16 sm:mx-0 mt-2'>
         <ContentImage
           alt={`Cover Image for ${title}`}
           src={coverImage}
