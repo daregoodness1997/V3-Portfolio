@@ -61,6 +61,26 @@ const services = [
 
 const technologies = [
   {
+    name: 'HTML 5',
+    icon: html,
+  },
+  {
+    name: 'CSS 3',
+    icon: css,
+  },
+  {
+    name: 'JavaScript',
+    icon: javascript,
+  },
+  {
+    name: 'TypeScript',
+    icon: typescript,
+  },
+  {
+    name: 'React JS',
+    icon: reactjs,
+  },
+  {
     name: 'Redux Toolkit',
     icon: redux,
   },
@@ -88,22 +108,31 @@ const technologies = [
     name: 'figma',
     icon: figma,
   },
+];
+
+const mobileTechnologies = [
   {
-    name: 'docker',
-    icon: docker,
+    name: 'Tailwind CSS',
+    icon: tailwind,
   },
   {
-    name: 'HTML 5',
-    icon: html,
+    name: 'Node JS',
+    icon: nodejs,
   },
   {
-    name: 'CSS 3',
-    icon: css,
+    name: 'MongoDB',
+    icon: mongodb,
   },
   {
-    name: 'JavaScript',
-    icon: javascript,
+    name: 'Three JS',
+    icon: threejs,
   },
+
+  {
+    name: 'figma',
+    icon: figma,
+  },
+
   {
     name: 'TypeScript',
     icon: typescript,
@@ -333,4 +362,11 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  mobileTechnologies,
+};

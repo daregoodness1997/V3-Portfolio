@@ -12,8 +12,7 @@ const Workstations: React.FC<Props> = ({ isMobile }) => {
   const workstation = useGLTF('./weathered/scene.gltf', true);
 
   useThree(({ camera }) => {
-    console.log('camera position', camera.position);
-    console.log('camera fov', camera);
+    
   });
 
   return (
