@@ -10,11 +10,12 @@ import {
 import Loader from '../Loader';
 
 interface BallProps {
-  imgUrl: string;
+  textureUrl: string;
 }
 
-const Ball: React.FC<BallProps> = ({ imgUrl }) => {
-  const [decal] = useTexture([imgUrl]);
+const Ball: React.FC<BallProps> = ({ textureUrl }) => {
+  const [decalTexture] = useTexture([textureUrl]);
+
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
@@ -28,7 +29,7 @@ const Ball: React.FC<BallProps> = ({ imgUrl }) => {
           polygonOffsetFactor={-5}
         />
         <Decal
-          map={decal}
+          map={decalTexture}
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
         />
@@ -38,19 +39,18 @@ const Ball: React.FC<BallProps> = ({ imgUrl }) => {
 };
 
 interface BallCanvasProps {
-  // icon?: React.ComponentType;
-  icon?: string;
+  iconTextureUrl?: string;
 }
 
-const BallCanvas: React.FC<BallCanvasProps> = ({ icon }) => {
+const BallCanvas: React.FC<BallCanvasProps> = ({ iconTextureUrl }) => {
   return (
     <Canvas frameloop='demand' gl={{ preserveDrawingBuffer: true }}>
       <OrbitControls enableZoom={false} />
       <Suspense fallback={<Loader />}>
-        <Ball imgUrl={icon} />
+        <Ball textureUrl={iconTextureUrl} />
       </Suspense>
     </Canvas>
   );
 };
 
-export default BallCanvas;
+export default React.memo(BallCanvas);

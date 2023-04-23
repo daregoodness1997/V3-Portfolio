@@ -78,7 +78,12 @@ const Navbar = () => {
               </li>
             ))}
 
-            <Button label={'Resume'} />
+            <Button
+              label={'Resume'}
+              onClick={() => {
+                window.open('resume.pdf');
+              }}
+            />
           </motion.ul>
           <motion.div
             className='xs:hidden block cursor-pointer'
@@ -103,7 +108,13 @@ const Navbar = () => {
                 </li>
               ))}
 
-              <Button label={'Resume'} isFullWidth={true} />
+              <Button
+                label={'Resume'}
+                isFullWidth={true}
+                onClick={() => {
+                  window.open('resume.pdf');
+                }}
+              />
             </motion.ul>
           )}
         </div>

@@ -18,7 +18,7 @@ const Tech = () => {
           {technologies.map((technology, idx) => (
             <div key={idx}>
               {/* Test */}
-              <BallCanvas icon={technology.icon} />
+              <BallCanvas iconTextureUrl={technology.icon} />
             </div>
           ))}
         </div>
