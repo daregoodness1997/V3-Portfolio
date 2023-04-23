@@ -113,7 +113,10 @@ const Navbar = () => {
                     className={`${
                       active === nav.title ? 'text-white' : 'text-secondary'
                     } hover:text-white text-[16px] font-medium cursor-pointer py-4 px-2 rounded-mds`}
-                    onClick={() => setActive(nav.title)}
+                    onClick={() => {
+                      setActive(nav.title);
+                      setExpanded(false);
+                    }}
                   >
                     <a href={`#${nav.id}`}>{nav.title}</a>
                   </li>
