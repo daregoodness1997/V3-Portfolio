@@ -5,6 +5,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
   isFullWidth?: boolean;
   colorScheme?: string;
+  loading?: boolean;
 }
 
 const Button: React.FC<Props> = ({
@@ -13,6 +14,7 @@ const Button: React.FC<Props> = ({
   size = 'sm',
   isFullWidth,
   colorScheme,
+  loading,
   ...props
 }) => {
   const checkSize = () => {
@@ -34,7 +36,7 @@ const Button: React.FC<Props> = ({
       onClick={onClick}
       {...props}
     >
-      {label}
+      {loading ? 'loading...' : label}
     </button>
   );
 };
