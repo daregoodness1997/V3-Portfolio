@@ -46,10 +46,10 @@ const About = () => {
           initial='hidden'
           whileInView={'show'}
         >
-          I have more than 3 years experience as a software developer and
+          I have more than 3 years of experience as a software developer and
           product designer proficient with javascript and typescript, and
-          expertise in React, Node and Next JS, including being the principal
-          product designer for varioud products accross healthcare, fintech and
+          expertise in React, Node, and Next JS, including being the principal
+          product designer for various products across healthcare, fintech, and
           the Web3 industry.
         </motion.p>
 
